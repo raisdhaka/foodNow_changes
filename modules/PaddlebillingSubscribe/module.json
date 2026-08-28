@@ -1,0 +1,24 @@
+{
+    "alias": "paddlebilling-subscribe",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\PaddlebillingSubscribe\\Providers\\Main"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "isPaymentModule":false,
+    "isSubscriptionModule":true,
+    "name":"Paddlebilling",
+    "global_fields":[
+        {
+            "separator":"Paddle Billing Subscribe configuration",
+            "title":"Paddle Billing token", 
+            "key":"paddle_billing_token", 
+            "value":""
+        }
+    ]
+}

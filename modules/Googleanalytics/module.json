@@ -1,0 +1,22 @@
+{
+    "alias": "googleanalytics",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Googleanalytics\\Providers\\Main"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "vendor_fields":[
+        {
+            "separator":"Google Analytics",
+            "title": "Key",
+            "key": "google_analytics_key",
+            "ftype": "input",
+            "value":""
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "alias": "mobileapps",
+    "version": "1.0",
+    "description": "Mobile Apps module for managing app download links",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\MobileApps\\Providers\\Main"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "global_fields":[
+        {
+            "separator":"Vendor App",
+            "title": "Vendor Android App Link",
+            "key": "VENDOR_APP_ANDROID_LINK",
+            "ftype": "input",
+            "value":""
+        },
+        {
+            "title": "Vendor iOS App Link",
+            "key": "VENDOR_APP_IOS_LINK",
+            "ftype": "input",
+            "value":""
+        },
+        {
+            "separator":"Driver App",
+            "title": "Driver Android App Link",
+            "key": "DRIVER_APP_ANDROID_LINK",
+            "ftype": "input",
+            "value":""
+        },
+        {
+            "title": "Driver iOS App Link",
+            "key": "DRIVER_APP_IOS_LINK",
+            "ftype": "input",
+            "value":""
+        },
+        {
+            "separator":"Client App",
+            "title": "Client Android App Link",
+            "key": "CLIENT_APP_ANDROID_LINK",
+            "ftype": "input",
+            "value":""
+        },
+        {
+            "title": "Client iOS App Link",
+            "key": "CLIENT_APP_IOS_LINK",
+            "ftype": "input",
+            "value":""
+        }
+    ]
+}

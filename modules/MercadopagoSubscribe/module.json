@@ -1,0 +1,26 @@
+{
+    "alias": "mercadopago-subscribe",
+    "description": "",
+    "version":"1.0",
+    "name":"Mercadopago",
+    "isPaymentModule":false,
+    "isSubscriptionModule":true,
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\MercadopagoSubscribe\\Providers\\Main"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "global_fields":[
+        {
+            "separator":"MercadoPago Subscribe configuration",
+            "title":"MercadoPago public key - Subscribe", 
+            "key":"MERCADOPAGO_SUBSCRIBE_PUBLIC_KEY", 
+            "value":""
+        }
+    ],
+    "vendor_fields":[]
+}

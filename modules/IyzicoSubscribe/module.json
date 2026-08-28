@@ -1,0 +1,38 @@
+{
+    "alias": "iyzico-subscribe",
+    "isPaymentModule":false,
+    "isSubscriptionModule":true,
+    "name":"Iyzico",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\IyzicoSubscribe\\Providers\\Main"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "global_fields":[
+       {
+            "separator":"Iyzico Subscribe configuration",
+            "title":"Iyzico Subscribe api key", 
+            "key":"IYZICO_API_KEY", 
+            "value":""
+        },
+        {
+            "title":"Iyzico Subscribe secret", 
+            "key":"IYZICO_SECRET", 
+            "value":""
+        },
+        {
+            "title":"Iyzico Subscribe mode", 
+            "key":"IYZICO_MODE", 
+            "value":"sandbox",
+            "ftype":"select",
+            "data":{
+                "sandbox":"Development - sandbox",
+                "live":"Production"
+            }
+        }]
+}

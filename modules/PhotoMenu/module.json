@@ -1,0 +1,16 @@
+{
+    "alias": "photomenu",
+    "name": "Photo Menu theme",
+    "version":"1.0",
+    "description": "A menu where images of the menu will be the primary navigation view point",
+    "isTemplateModule":true,
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\PhotoMenu\\Providers\\Main"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

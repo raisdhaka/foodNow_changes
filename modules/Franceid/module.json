@@ -1,0 +1,26 @@
+{
+    "alias": "franceid",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Franceid\\Providers\\Main"
+    ],
+    "aliases": {},
+    "vendor_fields":[{
+        "separator":"Numéro de inscription",
+        "title": "Numéro de SIREN",
+        "key": "number_de_siren",
+        "ftype": "input",
+        "value":""
+    },
+    {
+        "title": "Numéro Intracommunautaire",
+        "key": "number_de_intercommunication",
+        "ftype": "input",
+        "value":""
+    }],
+    "files": [],
+    "requires": []
+}

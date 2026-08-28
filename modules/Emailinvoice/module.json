@@ -1,0 +1,20 @@
+{
+    "alias": "emailinvoice",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Emailinvoice\\Providers\\Main"
+    ],
+    "aliases": {},
+    "files": [],
+    "vendor_fields":[{
+        "separator":"Notifications",
+        "title": "Enable email order notification",
+        "key": "enable_email_order_notification",
+        "ftype": "bool",
+        "value":true
+    }],
+    "requires": []
+}

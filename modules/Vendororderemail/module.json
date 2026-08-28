@@ -1,0 +1,20 @@
+{
+    "alias": "vendororderemail",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Vendororderemail\\Providers\\Main"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "vendor_fields":[{
+        "separator":"Email order notifications",
+        "title": "Enable order notifications",
+        "key": "enable_email_order_notification",
+        "ftype": "bool",
+        "value":false
+    }]
+}

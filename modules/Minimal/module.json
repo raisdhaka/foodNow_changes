@@ -1,0 +1,15 @@
+{
+    "alias": "minimal",
+    "name": "Minimal",
+    "isTemplate": true,
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Minimal\\Providers\\Main"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

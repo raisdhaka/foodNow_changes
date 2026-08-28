@@ -1,0 +1,59 @@
+{
+    "alias": "tinypng",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Tinypng\\Providers\\Main"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "global_fields":[
+        {
+            "separator":"TinyPNG configuration",
+            "title": "Enable TinyPNG for image processing",
+            "key": "ASENABLE_TINYPNG",
+            "ftype": "bool",
+            "value":false
+        },
+        {
+            "title":"TinyPNG api key", 
+            "key":"TINYPNG_API_KEY", 
+            "value":""
+        },
+        {
+            "separator":"TinyPNG AWS S3",
+            "title":"AWS access key id", 
+            "key":"tinpng_aws_access_key_id", 
+            "value":""
+        },
+        {
+            "title":"AWS secret access key", 
+            "key":"tinpng_aws_secret_access_key", 
+            "value":""
+        },
+        {
+            "title":"AWS region", 
+            "key":"tinpng_aws_region", 
+            "value":""
+        },
+        {
+            "title":"AWS bucket", 
+            "key":"aws_bucket", 
+            "value":""
+        },
+        {
+            "separator":"TinyPNG Google Cloud",
+            "title":"GCP access token", 
+            "key":"gcp_access_token", 
+            "value":""
+        },
+        {
+            "title":"GCP path", 
+            "key":"gcp_path", 
+            "value":""
+        }
+    ]
+}

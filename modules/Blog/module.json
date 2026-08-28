@@ -1,0 +1,46 @@
+{
+    "alias": "blog",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Blog\\Providers\\Main"
+    ],
+    
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "adminmenus":[
+        {
+            "name":"Blog",
+            "icon":"ni ni-collection text-blue",
+            "route":"blogging.index"
+        }
+    ],
+    "global_fields":[
+        {
+            "separator":"Blog settings",
+            "icon":"🔗",
+            "title": "Editor Info",
+            "key": "BLOG_EDITOR_INFO", 
+            "help": "This blog module uses Quill.js for rich text editing",
+            "ftype": "input",
+            "value": "Quill.js"
+        },
+        {
+            "title": "Show Featured Image",
+            "key": "BLOG_SHOW_FEATURED_IMAGE",
+            "help": "Display featured image on blog posts?", 
+            "ftype": "bool",
+            "value": true
+        },
+        {
+            "title": "Disqus Shortname",
+            "key": "BLOG_DISQUS_SHORTNAME",
+            "help": "Disqus shortname", 
+            "ftype": "input",
+            "value": "wpbox"
+        }
+    ]
+}

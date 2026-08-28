@@ -1,0 +1,26 @@
+{
+    "alias": "drivercategories",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Drivercategories\\Providers\\Main"
+    ],
+    "adminmenus":[
+        {
+            "name":"Categories",
+            "params":{"type":"driver"},
+            "route":"admin.landing.posts",
+            "icon":"ni ni-single-copy-04 text-red"
+        }
+    ],
+    "userextra":[
+        {
+            "route":"drivercategories::select"
+        }
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

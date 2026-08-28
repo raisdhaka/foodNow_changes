@@ -1,0 +1,38 @@
+{
+    "alias": "aihub",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Aihub\\Providers\\Main"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "vendor_fields":[{
+        "separator":"Open AI",
+        "title": "Enable OpenAI integration",
+        "key": "openai_enable",
+        "ftype": "bool",
+        "value": false
+    },{
+        "title": "OpenAI API Key",
+        "key": "openai_api_key",
+        "value": ""
+    },{
+        "title": "Default Model",
+        "key": "openai_default_model",
+        "value": "gpt-3.5-turbo"
+    },{
+        "title": "Max Tokens",
+        "key": "openai_max_tokens",
+        "ftype": "number",
+        "value": 1000
+    },{
+        "title": "Temperature",
+        "key": "openai_temperature",
+        "ftype": "number",
+        "value": 0.7
+    }]
+}
