@@ -1,0 +1,805 @@
+/* Fusion Theme - Vibrant neon style overlay for elegant.css */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Rajdhani:wght@500;600;700&display=swap');
+
+:root {
+  /* Override color variables with neon fusion theme */
+  --color-background: #121212;
+  --color-background-shadow: #1a1a1a;
+  --color-primary: #ff3a5e;
+  --color-buttons: #00f7ff;
+  --color-secondary: #7928ca;
+  --color-accent: #ffdd00;
+  --color-text-light: #f0f0f0;
+  --color-text-dark: #121212;
+  --font-weight-bold: 600;
+  --neon-red: #ff3a5e;
+  --neon-blue: #00f7ff;
+  --neon-purple: #7928ca;
+  --neon-yellow: #ffdd00;
+  --neon-green: #00ff8c;
+  --neon-shadow: 0 0 10px, 0 0 20px;
+}
+
+/* General Body Styling */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-light);
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Section Background */
+.section-place-content {
+  background-color: var(--color-background) !important;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rajdhani', 'Quicksand', sans-serif;
+  color: var(--color-text-light);
+}
+
+/* Category Heading */
+.category-heading h1 {
+  color: var(--color-text-light) !important;
+  font-weight: 700;
+  font-size: 1.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.category-heading .border-slate-200 {
+  border-color: var(--neon-blue) !important;
+  opacity: 0.5;
+}
+
+/* Menu tabs styling (ORISON/ENGOM) */
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.menu-tab {
+  padding: 0.75rem 2.5rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.menu-tab.active {
+  color: var(--color-text-light);
+}
+
+.menu-tab.red {
+  border: 2px solid var(--neon-red);
+  box-shadow: 0 0 10px var(--neon-red);
+  color: var(--color-text-light);
+}
+
+.menu-tab.blue {
+  border: 2px solid var(--neon-blue);
+  box-shadow: 0 0 10px var(--neon-blue);
+  color: var(--color-text-light);
+}
+
+.menu-tab:hover {
+  transform: translateY(-2px);
+}
+
+/* Menu Card Item Styling */
+.photo-menu-item {
+  margin-bottom: 1.5rem;
+}
+
+.photo-menu-item a {
+  background-color: #1e1e1e !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.photo-menu-item a:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Menu Item Image Container */
+.photo-menu-item .relative.w-full.h-56 {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Menu Item Title Overlay */
+.photo-menu-item .absolute.bottom-0 {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent) !important;
+  padding-bottom: 0.75rem !important;
+}
+
+.photo-menu-item h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  color: var(--color-text-light) !important;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  font-size: 1.1rem !important;
+}
+
+/* Price Badge Styling */
+.photo-menu-item .absolute.top-2.right-2 {
+  background: var(--color-text-dark) !important;
+  border: 1px solid var(--neon-yellow);
+  box-shadow: 0 0 8px var(--neon-yellow);
+}
+
+.photo-menu-item .text-slate-700 {
+  color: var(--neon-yellow) !important;
+}
+
+.photo-menu-item .text-slate-500 {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Item Description Styling */
+.item-description {
+  background-color: #1e1e1e !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-family: 'Quicksand', sans-serif;
+  line-height: 1.4;
+  min-height: 2.8em;
+}
+
+.photo-menu-item:nth-child(3n+1) .item-description {
+  border-bottom: 1px dashed var(--neon-red);
+}
+
+.photo-menu-item:nth-child(3n+2) .item-description {
+  border-bottom: 1px dashed var(--neon-blue);
+}
+
+.photo-menu-item:nth-child(3n+3) .item-description {
+  border-bottom: 1px dashed var(--neon-purple);
+}
+
+.item-description p {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+/* Price Button Styling */
+.photo-menu-item .bg-white {
+  background-color: var(--color-text-dark) !important;
+}
+
+/* Dynamic color buttons based on position */
+.photo-menu-item:nth-child(3n+1) .absolute.top-2.right-2 {
+  border-color: var(--neon-red);
+  box-shadow: 0 0 8px var(--neon-red);
+}
+
+.photo-menu-item:nth-child(3n+1) .text-slate-700 {
+  color: var(--neon-red) !important;
+}
+
+.photo-menu-item:nth-child(3n+2) .absolute.top-2.right-2 {
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 8px var(--neon-blue);
+}
+
+.photo-menu-item:nth-child(3n+2) .text-slate-700 {
+  color: var(--neon-blue) !important;
+}
+
+.photo-menu-item:nth-child(3n+3) .absolute.top-2.right-2 {
+  border-color: var(--neon-purple);
+  box-shadow: 0 0 8px var(--neon-purple);
+}
+
+.photo-menu-item:nth-child(3n+3) .text-slate-700 {
+  color: var(--neon-purple) !important;
+}
+
+/* Add price button colors by row */
+.grid-cols-3 > div:nth-child(3n+1) ~ .photo-menu-item:nth-child(3n+1) a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--neon-red);
+  z-index: 1;
+}
+
+.grid-cols-3 > div:nth-child(3n+2) ~ .photo-menu-item:nth-child(3n+2) a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--neon-blue);
+  z-index: 1;
+}
+
+.grid-cols-3 > div:nth-child(3n+3) ~ .photo-menu-item:nth-child(3n+3) a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--neon-purple);
+  z-index: 1;
+}
+
+/* Bottom price buttons */
+.btn-price {
+  background-color: var(--color-text-dark) !important;
+  color: var(--color-text-light) !important;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 50px !important;
+  padding: 0.5rem 1.5rem !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease !important;
+  border: none !important;
+}
+
+/* Color variants for price buttons */
+.btn-price.red {
+  background: var(--neon-red) !important;
+  box-shadow: 0 0 10px var(--neon-red);
+  color: white !important;
+}
+
+.btn-price.blue {
+  background: var(--neon-blue) !important;
+  box-shadow: 0 0 10px var(--neon-blue);
+  color: var(--color-text-dark) !important;
+}
+
+.btn-price.purple {
+  background: var(--neon-purple) !important;
+  box-shadow: 0 0 10px var(--neon-purple);
+  color: white !important;
+}
+
+.btn-price:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Allergens styling */
+.allergens {
+  background-color: rgba(30, 30, 30, 0.7) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem !important;
+}
+
+.allergen {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 4px !important;
+}
+
+/* Cart button styling */
+#cartButtonHeader {
+  background: var(--neon-green) !important;
+  color: var(--color-text-dark) !important;
+  box-shadow: 0 0 15px var(--neon-green) !important;
+  position: fixed !important;
+  right: 2rem !important;
+  top: 2rem !important;
+  z-index: 100 !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 50px !important;
+  font-family: 'Rajdhani', sans-serif !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+}
+
+#cartButtonHeader i {
+  font-size: 1.25rem !important;
+}
+
+#cartButtonHeader a {
+  color: var(--color-text-dark) !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none !important;
+}
+
+#itemsCount {
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-width: 1.5rem !important;
+  height: 1.5rem !important;
+  background-color: var(--color-text-dark) !important;
+  color: var(--neon-green) !important;
+  border-radius: 50% !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+}
+
+/* Custom animations */
+@keyframes neonPulse {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+.category-heading h1 {
+  animation: neonPulse 3s infinite;
+}
+
+@keyframes borderFlash {
+  0% { box-shadow: 0 0 5px currentColor; }
+  50% { box-shadow: 0 0 15px currentColor, 0 0 30px currentColor; }
+  100% { box-shadow: 0 0 5px currentColor; }
+}
+
+.menu-tab {
+  animation: borderFlash 2s infinite;
+}
+
+/* Menu section title styling */
+#menu-section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  margin-top: 5rem;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .menu-tabs {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .category-heading h1 {
+    font-size: 1.5rem;
+  }
+  
+  #cartButtonHeader {
+    right: 1rem !important;
+    top: 1rem !important;
+    padding: 0.5rem 1rem !important;
+  }
+  
+  .photo-menu-item .relative.w-full.h-56 {
+    height: 9rem;
+  }
+  
+  #menu-section-title {
+    font-size: 2rem;
+    margin-top: 4rem;
+  }
+  
+  .btn-price {
+    font-size: 0.9rem !important;
+    padding: 0.4rem 1rem !important;
+  }
+  
+  .item-description {
+    min-height: 2.4em;
+  }
+  
+  .item-description p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Sleek transitions */
+.photo-menu-item a,
+.photo-menu-item img,
+.btn-price,
+#cartButtonHeader,
+.menu-tab {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+/* Card glow effects on hover */
+.photo-menu-item a:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1) !important;
+}
+
+.photo-menu-item:nth-child(3n+1) a:hover {
+  box-shadow: 0 0 20px rgba(255, 58, 94, 0.2) !important;
+}
+
+.photo-menu-item:nth-child(3n+2) a:hover {
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.2) !important;
+}
+
+.photo-menu-item:nth-child(3n+3) a:hover {
+  box-shadow: 0 0 20px rgba(121, 40, 202, 0.2) !important;
+}
+
+/* Food item name overlay effect */
+.photo-menu-item a:hover .absolute.bottom-0 {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5), transparent) !important;
+}
+
+/* Menu items title styling */
+#menu-items-title {
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+}
+
+/* Container styling to match dark theme */
+.packer, .package {
+  background-color: transparent !important;
+}
+
+/* Fix button sizing and spacing */
+.photo-menu-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-menu-item a {
+  flex: 1;
+  border-radius: 0.5rem !important;
+  margin-bottom: 0;
+}
+
+.photo-menu-item .btn-price {
+  width: 100%;
+  margin-top: 0.25rem !important;
+}
+
+/* Extra neon glowing effects for item borders */
+.photo-menu-item:hover a {
+  border-color: currentColor;
+}
+
+.photo-menu-item:nth-child(3n+1):hover a {
+  border-color: var(--neon-red);
+}
+
+.photo-menu-item:nth-child(3n+2):hover a {
+  border-color: var(--neon-blue);
+}
+
+.photo-menu-item:nth-child(3n+3):hover a {
+  border-color: var(--neon-purple);
+}
+
+/* Description hover effect */
+.photo-menu-item:hover .item-description {
+  background-color: #262626 !important;
+}
+
+/* Fix any form elements to match the theme */
+input, select, textarea {
+  background-color: #1e1e1e !important;
+  color: var(--color-text-light) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Fix any modal/popup windows to match theme */
+.modal-content {
+  background-color: #1e1e1e !important;
+  color: var(--color-text-light) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Animate price buttons on hover */
+.btn-price:hover {
+  transform: translateY(-3px) scale(1.05) !important;
+}
+
+.btn-price.red:hover {
+  box-shadow: 0 0 15px var(--neon-red), 0 0 30px var(--neon-red) !important;
+}
+
+.btn-price.blue:hover {
+  box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-blue) !important;
+}
+
+.btn-price.purple:hover {
+  box-shadow: 0 0 15px var(--neon-purple), 0 0 30px var(--neon-purple) !important;
+}
+
+/* Override other light theme colors */
+.box-info, .section, .featured-search {
+  background-color: #1e1e1e !important;
+  color: var(--color-text-light) !important;
+}
+
+/* Modal Styling for Fusion Theme */
+.modal {
+  z-index: 1000 !important;
+}
+
+.modal-content {
+  background-color: #1e1e1e !important;
+  color: var(--color-text-light) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5) !important;
+  overflow: hidden !important;
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 1.5rem !important;
+}
+
+.modal-header .close {
+  color: var(--color-text-light) !important;
+  opacity: 0.8 !important;
+  text-shadow: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.modal-header .close:hover {
+  opacity: 1 !important;
+  transform: rotate(90deg) !important;
+}
+
+.modal-body {
+  padding: 1.5rem !important;
+}
+
+.modal-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 1.5rem !important;
+}
+
+/* Modal Item Price */
+.modal-body .price {
+  color: var(--neon-green) !important;
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  font-family: 'Rajdhani', sans-serif !important;
+  margin-bottom: 1.5rem !important;
+  text-shadow: 0 0 10px rgba(0, 255, 140, 0.5) !important;
+}
+
+/* Item description in modal */
+.modal-body .item-description {
+  color: rgba(255, 255, 255, 0.7) !important;
+  margin-bottom: 1.5rem !important;
+  font-size: 1rem !important;
+}
+
+/* Extras Section */
+.modal-body h5 {
+  font-family: 'Rajdhani', sans-serif !important;
+  color: var(--color-text-light) !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 1rem !important;
+  font-size: 1.1rem !important;
+}
+
+/* Form controls and inputs */
+.form-group {
+  margin-bottom: 1.2rem !important;
+}
+
+.form-control {
+  background-color: #262626 !important;
+  color: var(--color-text-light) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0.375rem !important;
+  padding: 0.75rem 1rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.form-control:focus {
+  border-color: var(--color-buttons) !important;
+  box-shadow: 0 0 10px rgba(0, 247, 255, 0.3) !important;
+  background-color: #2d2d2d !important;
+}
+
+/* Extras Checkboxes styling */
+.custom-control {
+  padding-left: 2.5rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.custom-control-label {
+  color: var(--color-text-light) !important;
+  font-weight: 400 !important;
+  font-size: 1rem !important;
+  cursor: pointer !important;
+  transition: color 0.3s ease !important;
+  padding: 0.25rem 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.custom-control-label:after {
+  position: absolute !important;
+  top: 0.25rem !important;
+  left: -2.5rem !important;
+  display: block !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  content: "" !important;
+  background-color: #262626 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 0.25rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.custom-control-label:before {
+  position: absolute !important;
+  top: 0.25rem !important;
+  left: -2.5rem !important;
+  display: block !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  content: "" !important;
+  background-color: transparent !important;
+  border-radius: 0.25rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.custom-control-input:checked ~ .custom-control-label:after {
+  background-color: var(--neon-red) !important;
+  border-color: var(--neon-red) !important;
+  box-shadow: 0 0 10px var(--neon-red) !important;
+}
+
+.custom-control-input:checked ~ .custom-control-label:before {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e") !important;
+  background-size: 0.8rem !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.custom-control-input:focus ~ .custom-control-label:after {
+  box-shadow: 0 0 0 0.2rem rgba(0, 247, 255, 0.25) !important;
+}
+
+.custom-control-input:hover ~ .custom-control-label:after {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.custom-control-input:checked:hover ~ .custom-control-label:after {
+  background-color: #ff5171 !important; /* Lighter red on hover */
+}
+
+/* Extra item price */
+.custom-control-label .extra-price {
+  color: var(--neon-yellow) !important;
+  font-weight: 600 !important;
+  margin-left: 0.5rem !important;
+}
+
+/* Quantity Input */
+input[type="number"] {
+  background-color: #262626 !important;
+  color: var(--color-text-light) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0.375rem !important;
+  padding: 0.75rem 1rem !important;
+  font-family: 'Rajdhani', sans-serif !important;
+  font-weight: 600 !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+input[type="number"]:focus {
+  border-color: var(--color-buttons) !important;
+  box-shadow: 0 0 10px rgba(0, 247, 255, 0.3) !important;
+  outline: none !important;
+}
+
+/* Add to Cart Button */
+.modal-footer .btn {
+  font-family: 'Rajdhani', sans-serif !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  padding: 0.75rem 2rem !important;
+  border-radius: 50px !important;
+  border: none !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.modal-footer .btn-primary {
+  background: var(--neon-green) !important;
+  color: var(--color-text-dark) !important;
+  box-shadow: 0 0 15px rgba(0, 255, 140, 0.4) !important;
+}
+
+.modal-footer .btn-primary:hover {
+  background: #00ff9d !important; /* Brighter green */
+  transform: translateY(-2px) !important;
+  box-shadow: 0 0 20px rgba(0, 255, 140, 0.6) !important;
+}
+
+.modal-footer .btn-secondary {
+  background: #333 !important;
+  color: var(--color-text-light) !important;
+}
+
+.modal-footer .btn-secondary:hover {
+  background: #444 !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Product image in modal */
+.modal-header img {
+  border-radius: 0.5rem !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Override any bootstrap styling that might conflict */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.modal-backdrop.show {
+  opacity: 0.9 !important;
+}
+
+/* Make sure modal scrolls properly on mobile */
+@media (max-width: 768px) {
+  .modal-dialog {
+    margin: 0.5rem !important;
+  }
+  
+  .modal-content {
+    border-radius: 0.5rem !important;
+  }
+  
+  .modal-body {
+    padding: 1rem !important;
+  }
+  
+  .custom-control-label {
+    font-size: 0.9rem !important;
+  }
+  
+  .custom-control {
+    padding-left: 2rem !important;
+  }
+  
+  .custom-control-label:before,
+  .custom-control-label:after {
+    left: -2rem !important;
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+  }
+} 
+
+.custom-control-label {
+  color: var(--color-text-dark) !important;
+}
