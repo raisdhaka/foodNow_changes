@@ -137,7 +137,7 @@ class OrdersController extends Controller
                 unset($cartData['price']);
             }
 
-            $theTable = $order['type'] == 3 ? Tables::findOrFail($order['table_id']) : null;
+            $theTable = $order['type'] == 3 ? Tables::find($order['table_id']) : null;
 
             $tz = $vendor->getConfig('time_zone', config('app.timezone'));
             $diff = Carbon::now()->setTimezone($tz)->diffInSeconds((new Carbon($order['created_at']))->setTimezone($tz));
@@ -318,10 +318,12 @@ class OrdersController extends Controller
 
     private function finishDBOrder($orderId)
     {
-        $order = Order::findOrFail($orderId);
-        $order->kds_finished = 1;
-        $order->status()->attach('5', ['user_id' => auth()->user()->id, 'comment' => '']);
-        $order->update();
+        $order = Order::where('id_per_vendor', $orderId)->firstOrFail();
+        $updated = Order::where('id_per_vendor', $orderId)->update(['kds_finished' => 1]);
+        
+        if ($updated) {
+            $order->status()->attach('5', ['user_id' => auth()->user()->id, 'comment' => '']);
+        }
 
         return response()->json([
             'status' => true,
@@ -361,9 +363,9 @@ class OrdersController extends Controller
 
     private function unfinishDBOrder($orderId)
     {
-        $order = Order::findOrFail($orderId);
-        $order->kds_finished = 0;
-        $order->update();
+        $order =  Order::where('id_per_vendor', $orderId)->firstOrFail();
+        if($order) Order::where('id_per_vendor', $orderId)->update(['kds_finished' => 0]);
+        
 
         return response()->json([
             'status' => true,

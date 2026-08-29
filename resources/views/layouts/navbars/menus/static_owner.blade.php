@@ -69,9 +69,14 @@
                     <i class="ni ni-tv-2 text-info"></i> {{ __('KDS') }}
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ">
                 <a class="nav-link {{ $currentRouteName == 'poscloud.index' ? 'active' : '' }}" target="_blank" href="{{ route('poscloud.index') }}">
                     <i class="ni ni-laptop text-primary"></i> {{ __('POS') }}
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_blank" href="https://pos.foodnowlimited.com/">
+                    <i class="ni ni-laptop text-primary"></i> {{ __('External POS') }}
                 </a>
             </li>
             <li class="nav-item">
@@ -353,11 +358,11 @@
             </ul>
         </div>
     </li>
-    <li class="nav-item">
+    <!--<li class="nav-item">
         <a class="nav-link" href="{{ config('settings.external_api_docs_url') }}" target="_blank">
             <i class="ni ni-app text-info"></i> {{ __('API') }}
         </a>
-    </li>
+    </li>-->
 </ul>
 
 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

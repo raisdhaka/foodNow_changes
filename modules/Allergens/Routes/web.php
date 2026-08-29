@@ -13,7 +13,7 @@
 
 
 Route::group([
-    'middleware' =>[ 'web','impersonate'],
+    'middleware' => 'web',
     'namespace' => 'Modules\Allergens\Http\Controllers'
 ], function () {
     Route::prefix('vendorallergens')->group(function() { 

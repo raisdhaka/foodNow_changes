@@ -156,26 +156,29 @@ class Main extends Controller
      //Shoer form for removing points from a user
      public function showPointRemoveForm(){
           $vendor=$this->getCompany();
-
-
-          //This vendor's cards
-          $cards=Card::where('vendor_id',$vendor->id)->with('client')->get();
           $userList=[];
-          foreach($cards as $card){
-               $userList[$card->id]=$card->card_id." -- ".$card->client->name." - ".$card->points." ".__('points');
+          $awardsList=[];
+
+          if($vendor){
+              $cards=Card::where('vendor_id',$vendor->id)->with('client')->get();
+              foreach($cards as $card){
+                   $userList[$card->id]=$card->card_id." -- ".$card->client->name." - ".$card->points." ".__('points');
+              }
+              
+              $awards=Posts::where('vendor_id',$vendor->id)
+              ->where('post_type','reward')
+              ->where('active_to','>',now())
+              ->get();
+              
+              //Get list of awards
+              //Create list of awards
+              foreach($awards as $award){
+                   $awardsList[$award->id]=$award->title." - ".$award->points." ".__('points');
+              }
           }
+          //This vendor's cards
          
 
-          //Get list of awards
-          $awards=Posts::where('vendor_id',$vendor->id)
-          ->where('post_type','reward')
-          ->where('active_to','>',now())
-          ->get();
-          //Create list of awards
-          $awardsList=[];
-          foreach($awards as $award){
-               $awardsList[$award->id]=$award->title." - ".$award->points." ".__('points');
-          }
 
           $fields=[
                ['ftype'=>'select','editclass'=>'col-6','name'=>"Client", 'id'=>'card_id', 'data'=>$userList, 'required'=>true],

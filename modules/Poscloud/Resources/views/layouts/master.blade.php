@@ -46,6 +46,11 @@
   
   @laravelPWA
 
+<style>
+    [v-cloak] {
+      display: none;
+    }
+</style>
 </head>
 
 <body class="g-sidenav-show bg-gray-100">

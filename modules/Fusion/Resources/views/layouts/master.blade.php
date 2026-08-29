@@ -8,7 +8,11 @@
 
        {{-- Laravel Mix - CSS File --}}
        {{-- <link rel="stylesheet" href="{{ mix('css/photomenu.css') }}"> --}}
-
+       <style>
+           label.custom-control-label {
+                color: #000 !important;
+            }
+       </style>
     </head>
     <body>
         @yield('content')

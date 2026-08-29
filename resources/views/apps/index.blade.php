@@ -195,7 +195,10 @@
                         @foreach ($apps as $app)
                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 mt-3 plugin-all @if ($app->installed) {{ 'plugin-installed'}} @endif <?php  foreach ($app->category as $cat){echo "plugin-".$cat." ";} ?>">
                             <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="{{ $app->image }}" alt="{{ $app->name }}">
+                                @if(isset($app->image) && $app->image)
+
+                                    <img class="card-img-top" src="{{ $app->image ?? '' }}" alt="{{ $app->name ?? '' }}">
+                                @endif
                                 <div class="card-body">
                                 <h5 class="card-title">{{ $app->name }} - {{ $app->price }} @if ($app->installed)<span class="small text-green">{{ __('installed')}} v{{$app->version}}</span>@endif</h5>
                                 <p class="card-text">{{ $app->description }}</p>

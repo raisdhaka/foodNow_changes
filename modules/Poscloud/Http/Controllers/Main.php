@@ -109,7 +109,7 @@ class Main extends Controller
                 return $item->getPriceSum();
             });
             //dd($theOrder);
-            $theTable=$order->type==3?Tables::findOrFail($order->id):null;
+            $theTable=$order->type==3?Tables::find($order->id):null;
             if($sum!=0){
                 array_push($returnArray,[
                     'isPOSOrder'=>true,
@@ -159,6 +159,7 @@ class Main extends Controller
                     'date'=>$formatter->format($order->created_at),
                     'table'=>$order->delivery_method==3?$theTable->restoarea->name."-".$theTable->name:"",
                     'expedition'=>$order->delivery_method,
+                    'status'=>$order->laststatus,
                     'type'=>$order->delivery_method==3?__('Dine in'):($order->delivery_method==2?__('Takeaway'):__('Delivery')),
                     'total'=> Money($order->order_price_with_discount, config('settings.cashier_currency'), config('settings.do_convertion'))->format(),
                     'config'=>$order->getAllConfigs()

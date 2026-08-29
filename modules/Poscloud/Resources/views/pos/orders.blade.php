@@ -30,6 +30,7 @@
                   <tr>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{ __('Date') }}</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2  d-none d-md-table-cell">{{ __('Recipt number') }}</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2  d-none d-md-table-cell">{{ __('Last Status') }}</th>
                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{ __('Order type') }}</th>
                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7   d-none d-md-table-cell ">{{ __('Employee') }}</th>
                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7  d-none d-md-table-cell ">{{ __('Total') }}</th>
@@ -45,6 +46,24 @@
                         </td>
                         <td class="  d-none d-md-table-cell">
                           <p class="text-xs font-weight-bold mb-0 reciptNumber">@{{ item.receipt_number }}</p>
+                        </td>
+                        <td>
+                         
+                         <!-- Status display with if-else -->
+                            <span v-if="item.status[0].id == 1" class="badge bg-secondary">Just created</span>
+                            <span v-else-if="item.status[0].id == 2" class="badge bg-info">Accepted by admin</span>
+                            <span v-else-if="item.status[0].id == 3" class="badge bg-primary">Accepted by restaurant</span>
+                            <span v-else-if="item.status[0].id == 4" class="badge bg-warning">Assigned to driver</span>
+                            <span v-else-if="item.status[0].id == 5" class="badge bg-purple">Prepared</span>
+                            <span v-else-if="item.status[0].id == 6" class="badge bg-cyan">Picked up</span>
+                            <span v-else-if="item.status[0].id == 7" class="badge bg-success">Delivered</span>
+                            <span v-else-if="item.status[0].id == 8" class="badge bg-danger">Rejected by admin</span>
+                            <span v-else-if="item.status[0].id == 9" class="badge bg-danger">Rejected by restaurant</span>
+                            <span v-else-if="item.status[0].id == 10" class="badge bg-warning">Updated</span>
+                            <span v-else-if="item.status[0].id == 11" class="badge bg-dark">Closed</span>
+                            <span v-else-if="item.status[0].id == 12" class="badge bg-danger">Rejected by driver</span>
+                            <span v-else-if="item.status[0].id == 13" class="badge bg-success">Accepted by driver</span>
+                            <span v-else class="badge bg-light">Unknown</span>
                         </td>
                         <td class="align-middle text-center text-sm">
                             <p class="text-xs font-weight-bold mb-0">@{{ item.type }}</p>

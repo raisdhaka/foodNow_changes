@@ -225,6 +225,9 @@ class ItemsController extends Controller
      */
     public function update(Request $request, Items $item): RedirectResponse
     {
+        $request->validate([
+            'category_id' => ['required'],
+        ]);
         $makeVariantsRecreate = false;
         $item->name = strip_tags($request->item_name);
         $item->description = strip_tags($request->item_description);

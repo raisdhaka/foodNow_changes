@@ -897,8 +897,14 @@ class RestorantController extends Controller
     private function makeRestaurantActive(Restorant $restaurant)
     {
         //Activate the restaurant
+        $subdomain = $this->makeAlias($restaurant->name);        
+        if (Restorant::where('subdomain', $subdomain)->where('id', '!=', $restaurant->id)->exists()) {
+            throw new \Exception("Cannot activate restaurant. The subdomain '{$subdomain}' is already taken by another restaurant.\n Go back and use different name.");
+            // return redirect()->route('admin.restaurants.index')->withStatus(__("Cannot activate restaurant. The subdomain '{$subdomain}' is already taken by another restaurant.\n Go back and use different name."));
+            
+        }
         $restaurant->active = 1;
-        $restaurant->subdomain = $this->makeAlias($restaurant->name);
+        $restaurant->subdomain = $subdomain;
         $restaurant->update();
 
         $owner = $restaurant->user;

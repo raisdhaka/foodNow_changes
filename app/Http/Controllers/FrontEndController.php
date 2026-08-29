@@ -1109,7 +1109,7 @@ class FrontEndController extends Controller
             return redirect()->route('restorant', $subDomain);
         }
         $restorant = Restorant::whereRaw('REPLACE(subdomain, "-", "") = ?', [str_replace('-', '', $alias)])->first();
-
+        
         //If not empty cart and not from this restorant - clear the cart
 
         try{
@@ -1123,12 +1123,22 @@ class FrontEndController extends Controller
             return $this->loyaltyPlatform($restorant);
         }
 
-        $doWeHaveOrderAfterHours = Module::has('orderdatetime') && $restorant->getConfig('order_date_time_enable', false);
+        //we have issue here @12April
+        // dd($restorant);
+        if($restorant){
+            $doWeHaveOrderAfterHours = Module::has('orderdatetime') && $restorant->getConfig('order_date_time_enable', false);
+        }else{
+            $doWeHaveOrderAfterHours=false;
+        }
 
         //Template switcher
         $menuTemplate = config('settings.front_end_template', 'defaulttemplate');
         if (Module::has('themeswitcher')) {
-            $vendorTemplate = $restorant->getConfig('menu_template', $menuTemplate);
+            if($restorant){
+                $vendorTemplate = $restorant->getConfig('menu_template', $menuTemplate);
+            }else{
+                $vendorTemplate = $menuTemplate;
+            }
 
            
             
@@ -1146,7 +1156,11 @@ class FrontEndController extends Controller
         }
 
         //Do we have google translate app
-        $doWeHaveGoogleTranslateApp = Module::has('googletranslate') && $restorant->getConfig('gt_enable', false) == 'true';
+        if($restorant){
+            $doWeHaveGoogleTranslateApp = Module::has('googletranslate') && $restorant->getConfig('gt_enable', false) == 'true';
+        }else{
+            $doWeHaveGoogleTranslateApp=false;
+        }
 
         if ($restorant && $restorant->active == 1) {
 

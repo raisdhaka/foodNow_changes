@@ -1,3 +1,8 @@
+<style>
+    label.custom-control-label {
+        color: #000 !important;
+    }
+</style>
 <div class="modal fade" id="productModal" z-index="9999" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered modal-" role="document" id="modalDialogItem">
         <div class="modal-content">

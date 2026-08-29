@@ -316,7 +316,7 @@ class OrderController extends Controller
 
         //Phone
         $phone = null;
-        if ($request->has('phone')) {
+        if ($request->has('phone') && strlen($request->phone) >= 10) {
             $phone = $request->phone;
         }
 
@@ -354,7 +354,7 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
-
+        // dd($request->all());
         //Convert web request to mobile like request
         if (config('app.isdrive', false)) {
             //iDrive ride

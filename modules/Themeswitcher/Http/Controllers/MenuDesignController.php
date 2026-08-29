@@ -17,12 +17,21 @@ class MenuDesignController extends Controller
     public function index()
     {
         $restaurant = Auth::user()->restorant;
-        $currentTemplate = $restaurant->getConfig('menu_template', '');
+        
+        if ($restaurant) {
+        $currentTemplate = $restaurant->getConfig('menu_template', 'defaulttemplate');
 
 
         
         // Get the URL to the vendor's public page
-        $urlToVendor = $restaurant->getLinkAttribute();
+        $urlToVendor = $restaurant->getLinkAttribute();    
+        }else{
+            $restaurant='';
+            $currentTemplate='';
+            $urlToVendor='';
+        }
+        
+        
 
         
         return view('themeswitcher::menu_design', [
