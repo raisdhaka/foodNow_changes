@@ -74,11 +74,7 @@
                     <i class="ni ni-laptop text-primary"></i> {{ __('POS') }}
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" target="_blank" href="https://pos.foodnowlimited.com/">
-                    <i class="ni ni-laptop text-primary"></i> {{ __('External POS') }}
-                </a>
-            </li>
+
             <li class="nav-item">
                 <a class="nav-link {{ $currentRouteName == 'finances.owner' ? 'active' : '' }}" href="{{ route('finances.owner') }}">
                     <i class="ni ni-chart-bar-32 text-yellow"></i> {{ __('Reports') }}
